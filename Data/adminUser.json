@@ -1,0 +1,20 @@
+{
+  "adminUser": [
+    {
+      "adminUserName": "ali",
+      "adminUserClasses": "",
+      "adminUserURL": "",
+      "id": 1
+    },
+    {
+      "adminUserName": "sufiyan",
+      "adminUserClasses": "",
+      "adminUserURL": "",
+      "id": 2
+    },
+    {
+      "adminUserName": "ali",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "goldenVideo": [
+    {
+      "goldenVideoName": "abc",
+      "goldenVideoClasses": "Traditional",
+      "goldenVideoURL": "C:\\fakepath\\WhatsApp Image 2020-12-06 at 2.42.28 PM.jpeg",
+      "id": 2
+    },
+    {
+      "goldenVideoName": "jj",
+      "goldenVideoClasses": "Pop",
+      "goldenVideoURL": "C:\\fakepath\\WhatsApp Image 2020-12-06 at 2.42.27 PM.jpeg",
+      "id": 3
+    }
+  ]
+}
