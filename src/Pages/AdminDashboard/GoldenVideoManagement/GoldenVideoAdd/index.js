@@ -16,14 +16,10 @@ import {
 import "./GoldenVideoAdd.scss";
 import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-// import { addGoldenVideo } from "../../../../store/actions/goldenVideoAction";
-// import { fetchUnassignedDrivers } from "../../../store/actions/driverAction";
-// import { actionTypes } from "../../../../store/common/types";
-// import Multiselect from "multiselect-react-dropdown";
+import Dropzone from "react-dropzone";
 
 function GoldenVideoAdd(props) {
- 
-  const accessKey =12345
+  const accessKey = 12345;
   const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [goldenVideoArray, setgoldenVideoArray] = useState([]);
@@ -91,8 +87,8 @@ function GoldenVideoAdd(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const goldenVideo = {accessKey, video_name, video_class, video };
-    console.log(goldenVideo)
+    const goldenVideo = { accessKey, video_name, video_class, video };
+    console.log(goldenVideo);
     setIsPending(true);
 
     fetch("http://localhost:3002/goldenVideos", {
@@ -155,19 +151,16 @@ function GoldenVideoAdd(props) {
                           type="select"
                           name="goldenVideoClasses"
                           id="goldenVideoClasses"
-                          onChange={(e) => setGoldenVideoClasses(e.target.value)}
+                          onChange={(e) =>
+                            setGoldenVideoClasses(e.target.value)
+                          }
                           value={video_class}
                         >
                           <option selected disabled value="">
                             Select Video Class
                           </option>
-                          <option   value="Pop">
-                            Pop
-                          </option>
-                          <option   value="Traditional">
-                            Traditional
-                          </option>
-                         
+                          <option value="Pop">Pop</option>
+                          <option value="Traditional">Traditional</option>
                         </Input>
                       </FormGroup>
 
@@ -193,7 +186,7 @@ function GoldenVideoAdd(props) {
                     ) : null} */}
                     </Col>
 
-                    <Col md="12">
+                    {/* <Col md="12">
                       <FormGroup>
                         <Label for="insurance"> Video URL</Label>
 
@@ -205,6 +198,28 @@ function GoldenVideoAdd(props) {
                           onChange={(e) => setGoldenVideoURL(e.target.value)}
                           required
                         />
+                        <FormFeedback>Video URL cannot be empty</FormFeedback>
+                      </FormGroup>
+                    </Col> */}
+                    <Col md="12">
+                      <FormGroup>
+                        <Label for="insurance"> Video URL</Label>
+
+                        <Dropzone
+                          onDrop={(acceptedFiles) => console.log(acceptedFiles)}
+                        >
+                          {({ getRootProps, getInputProps }) => (
+                            <section>
+                              <div {...getRootProps()}>
+                                <input {...getInputProps()} />
+                                <p>
+                                  Drag 'n' drop some files here, or click to
+                                  select files
+                                </p>
+                              </div>
+                            </section>
+                          )}
+                        </Dropzone>
                         <FormFeedback>Video URL cannot be empty</FormFeedback>
                       </FormGroup>
                     </Col>

@@ -189,13 +189,22 @@ function List(props) {
     // });
     setFiles([]);
   };
-
+  const [value, setValue] = useState();
   const deleteButton = (id) => {
     fetch("http://localhost:3002/students/" + id + "?accessKey=12345", {
       method: "DELETE",
     });
+
+    // history.push(`/StudentsManagement/list`);
+    // window.location.reload(`/studentManagement/list`);
+    // setValue({})
+    history.push(`/studentManagement/list`);
+
   };
 
+  useEffect(() => {
+   
+  }, [deleteButton])
   const showstudent = (row) => {
     //console.log("show -->", row._id)
     history.push(`/studentManagement/student/${row._id}`);

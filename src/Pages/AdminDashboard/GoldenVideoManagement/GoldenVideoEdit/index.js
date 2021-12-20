@@ -47,64 +47,16 @@ function GoldenVideoEdit(props) {
       setGoldenVideoName(goldenVideo2.video_name);
       setGoldenVideoClasses(goldenVideo2.video_class);
     }
+    console.log(goldenVideo2)
+    // console.log(goldenVideo2.video_name)
   }, [goldenVideo2]);
 
-  console.log(goldenVideo2);
-  // const handleGoldenVideoIDChange = (e) => {
-  //   e.preventDefault();
-  //   setGoldenVideoID({
-  //     ...goldenVideoID,
-  //     value: e.target.value,
-  //   });
-  // };
-  // const handleGoldenVideoNameChange = (e) => {
-  //   e.preventDefault();
-  //   setGoldenVideoName({
-  //     ...goldenVideoName,
-  //     value: e.target.value,
-  //   });
-  // };
-  // const handleGoldenVideoURLChange = (e) => {
-  //   e.preventDefault();
-  //   setGoldenVideoURL({
-  //     ...goldenVideoURL,
-  //     value: e.target.value,
-  //   });
-  // // };
-
-  // const handleGoldenVideoClassesChange = (e) => {
-  //   e.preventDefault();
-  //   setGoldenVideoClasses({
-  //     ...goldenVideoClasses,
-  //     value: e.target.value,
-  //   });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   const goldenVideoData = {
-  //     goldenVideoID: goldenVideoID.value,
-  //     goldenVideoName: goldenVideoName.value,
-  //     goldenVideoClasses: goldenVideoClasses.value,
-  //     goldenVideoURL: goldenVideoURL.value,
-  //     deleted: false,
-  //   };
-  //   console.log("goldenVideoData", goldenVideoData);
-  //   history.push("/goldenVideoManagement/list");
-  //   // addGoldenVideo(
-  //   //   goldenVideoData,
-  //   //   () => {
-  //   //     history.push("/goldenVideoManagement/list");
-  //   //     increaseGoldenVideoCount();
-  //   //   },
-  //   //   () => setLoading(false)
-  //   // );
-  // };
+  // console.log(goldenVideo2.video_name);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const goldenVideo = { video_name, video_class };
+    const goldenVideo = { video_name, video_class, video };
 
     setIsPending(true);
 
@@ -129,8 +81,11 @@ function GoldenVideoEdit(props) {
         transitionEnter={false}
         transitionLeave={false}
       >
+     
         <Row>
           <Col md="12">
+          {goldenVideo2 && 
+
             <Card className="main-card mb-3">
               {goldenVideo2 && (
                 <CardBody>
@@ -211,12 +166,13 @@ function GoldenVideoEdit(props) {
                       </Button>
                     </Link>
                     <Button color="primary" className="mt-1" disabled={loading}>
-                      Add
+                      Update
                     </Button>
                   </Form>
                 </CardBody>
               )}
             </Card>
+          }
           </Col>
         </Row>
       </ReactCSSTransitionGroup>

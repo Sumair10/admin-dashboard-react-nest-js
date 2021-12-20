@@ -32,7 +32,7 @@ function StudentsAdd(props) {
     value: "",
   });
 
-  const [studentName, setstudentName] = useState("");
+  const [student_name, setstudentName] = useState("");
   const [isPending, setIsPending] = useState(false);
 
   // const handlestudentIDChange = (e) => {
@@ -86,14 +86,14 @@ function StudentsAdd(props) {
   //   //   () => setLoading(false)
   //   // );
   // };
-
+  const accessKey =12345
   const handleSubmit = (e) => {
     e.preventDefault();
-    const student = { studentName};
+    const student = { accessKey ,student_name};
 
     setIsPending(true);
 
-    fetch("http://localhost:8002/student", {
+    fetch("http://localhost:3002/students", {
       method: "POST",
       headers: { "content-Type": " application/json" },
       body: JSON.stringify(student),
@@ -136,7 +136,7 @@ function StudentsAdd(props) {
                         <Input
                           name="studentName"
                           id="studentName"
-                          value={studentName}
+                          value={student_name}
                           onChange={(e) => setstudentName(e.target.value)}
                           placeholder="Enter Video Name"
                           required

@@ -265,7 +265,7 @@ function List(props) {
                   {/* <th scope="col">ID</th> */}
                   <th scope="col">Video Name</th>
                   <th scope="col">Class</th>
-                  <th scope="col">Link</th>
+                  {/* <th scope="col">Link</th> */}
                   <th scope="col">Actions</th>
                 </tr>
               </thead>
@@ -276,7 +276,7 @@ function List(props) {
                       {/* <th scope="row">{goldenVideos._id}</th> */}
                       <td>{goldenVideos.video_name}</td>
                       <td>{goldenVideos.video_class}</td>
-                      <td>{goldenVideos.video}</td>
+                      {/* <td>{goldenVideos.video}</td> */}
                       <td>
                         <i
                           className="lnr-eye"
